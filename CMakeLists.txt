@@ -20,7 +20,8 @@ SET(imgui_HDRS
     )
 
 # add the main library
-add_library(imgui ${imgui_SRCS} ${imgui_HDRS})
+ADD_LIBRARY(imgui ${imgui_SRCS} ${imgui_HDRS})
+ADD_LIBRARY(imgui SHARED ${imgui_SRCS} ${imgui_HDRS})
  
 install (TARGETS imgui DESTINATION ${CMAKE_INSTALL_LIBDIR})
 install (FILES imgui.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
