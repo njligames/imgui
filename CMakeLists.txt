@@ -24,7 +24,7 @@ ADD_LIBRARY(imgui STATIC ${imgui_SRCS} ${imgui_HDRS})
 #ADD_LIBRARY(imgui SHARED ${imgui_SRCS} ${imgui_HDRS})
  
 install (TARGETS imgui DESTINATION ${CMAKE_INSTALL_LIBDIR})
-install (FILES imgui.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install (FILES imgui.h imgui_internal.h imconfig.h stb_textedit.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 foreach(p LIB INCLUDE)
     set(var CMAKE_INSTALL_${p}DIR)
