@@ -20,12 +20,12 @@ SET(imgui_HDRS
     )
 
 # add the main library
-if(BUILD_STATIC_LIBS)
-  ADD_LIBRARY(imgui-static STATIC ${imgui_SRCS} ${imgui_HDRS})
+if(BUILD_STATIC_LIB)
+  ADD_LIBRARY(imgui STATIC ${imgui_SRCS} ${imgui_HDRS})
   install (TARGETS imgui-static DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif()
 
-if(BUILD_SHARED_LIBS)
+if(BUILD_SHARED_LIB)
   ADD_LIBRARY(imgui SHARED ${imgui_SRCS} ${imgui_HDRS})
   install (TARGETS imgui DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif()
