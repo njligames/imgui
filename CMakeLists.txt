@@ -20,8 +20,13 @@ SET(imgui_HDRS
     )
 
 # add the main library
-ADD_LIBRARY(imgui STATIC ${imgui_SRCS} ${imgui_HDRS})
-#ADD_LIBRARY(imgui SHARED ${imgui_SRCS} ${imgui_HDRS})
+if(BUILD_STATIC_LIB)
+  ADD_LIBRARY(imgui STATIC ${imgui_SRCS} ${imgui_HDRS})
+endif()
+
+if(BUILD_SHARED_LIB)
+  ADD_LIBRARY(imgui SHARED ${imgui_SRCS} ${imgui_HDRS})
+endif()
  
 install (TARGETS imgui DESTINATION ${CMAKE_INSTALL_LIBDIR})
 install (FILES imgui.h imgui_internal.h imconfig.h stb_textedit.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
